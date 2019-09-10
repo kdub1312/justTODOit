@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        html {
+/*            width: 500px;*/
+            max-width: 500px;
+            min-width: 300px;
+        }
+      #addTask {
+        outline: none;
+      }
+        #taskList li {
+            position:relative;
+            margin-bottom: 10px;
+        }
+        .task-text {
+            max-width: 175px;
+            display: block;
+            overflow-wrap: break-word;
+        }
+        .delete-button {
+            position: absolute;
+            right: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <input id="taskInput" type="text">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+    <script src="popup.js"></script>
+  </body>
+</html>
