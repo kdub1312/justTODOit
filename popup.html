@@ -7,23 +7,30 @@
             max-width: 500px;
             min-width: 300px;
         }
-      #addTask {
-        outline: none;
-      }
+          #addTask {
+            outline: none;
+          }
+        #taskList {
+            padding-left: 0;
+        }
         #taskList li {
             position:relative;
             margin-bottom: 10px;
             border: 1px solid gray;
             padding: 5px;
+            display: grid;
+            grid-template-columns: auto 30%;
         }
         .task-text {
             max-width: 175px;
             display: block;
             overflow-wrap: break-word;
             vertical-align:middle;
+            display: inline-block;
         }
         .delete-button {
-            position: absolute;
+            position: relative;
+            display: inline-block;
             right: 0;
         }
     </style>
