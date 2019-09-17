@@ -88,6 +88,17 @@ taskInput.addEventListener("keyup", function(event) {
   }
 });
 
+//respond to user pressing 'enter' during focus of 'add task' button
+addTask.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    addTask.click();
+  }
+});
+
 //Create distributed event listener on ul
 taskList.addEventListener('click', function(e) {
     if(e.target && e.target.className == 'delete-button') {
