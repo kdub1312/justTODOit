@@ -36,7 +36,6 @@ chrome.storage.sync.get(['tasks'], function(data) {
     }
 });
 
-
 addTask.onclick = function(element) {
     //add item to 'tasks' array then output to list
     var newTask = taskInput.value;
@@ -77,16 +76,17 @@ addTask.onclick = function(element) {
 
   };
 
-//respond to user clicking 'enter' button inside of input
-taskInput.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    addTask.click();
-  }
-});
+//TODO: DETERMINE WAY TO ADD EVENT LISTENER TO TASKINPUT THAT DOES NOT CAUSE DOUBLE DOM ENTRY
+    //respond to user clicking 'enter' button inside of input
+//taskInput.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+    //if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+    //event.preventDefault();
+        // Trigger the button element with a click
+    //addTask.click();
+  //}
+//});
 
 //respond to user pressing 'enter' during focus of 'add task' button
 addTask.addEventListener("keyup", function(event) {
