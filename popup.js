@@ -18,11 +18,19 @@ chrome.storage.sync.get(['tasks'], function(data) {
         console.log(data.tasks[i]);
         var firstTask = data.tasks[i];
         var task = document.createElement("li");
+        
+        //add checkbox input to each line
+        var checkboxInput = document.createElement("input");
+        checkboxInput.setAttribute("type", "checkbox");
+        task.appendChild(checkboxInput);
+        
+        //add text to each line
+        var label = document.createElement("label");
         var textWrapper = document.createElement("span");
         textWrapper.classList.add('task-text');
-        task.appendChild(textWrapper);
+        label.appendChild(textWrapper);
+        task.appendChild(label);
         textWrapper.textContent = firstTask;
-        
         
         //add delete button to each item
         var deleteButton = document.createElement("button");
@@ -56,9 +64,17 @@ addTask.onclick = function(element) {
         var index = tasks.length - 1;
         task.classList.add('task-' + index);//create indexed class name
         
+        //add checkbox input to each line
+        var checkboxInput = document.createElement("input");
+        checkboxInput.setAttribute("type", "checkbox");
+        task.appendChild(checkboxInput);
+        
+        //add text to each line
+        var label = document.createElement("label");
         var textWrapper = document.createElement("span");
         textWrapper.classList.add('task-text');
-        task.appendChild(textWrapper);
+        label.appendChild(textWrapper);
+        task.appendChild(label);
         textWrapper.textContent = tasks[index];
         
         //task.textContent = tasks[index];
@@ -75,18 +91,6 @@ addTask.onclick = function(element) {
     });
 
   };
-
-//TODO: DETERMINE WAY TO ADD EVENT LISTENER TO TASKINPUT THAT DOES NOT CAUSE DOUBLE DOM ENTRY
-    //respond to user clicking 'enter' button inside of input
-//taskInput.addEventListener("keyup", function(event) {
-        // Number 13 is the "Enter" key on the keyboard
-    //if (event.keyCode === 13) {
-        // Cancel the default action, if needed
-    //event.preventDefault();
-        // Trigger the button element with a click
-    //addTask.click();
-  //}
-//});
 
 //respond to user pressing 'enter' during focus of 'add task' button
 addTask.addEventListener("keyup", function(event) {
@@ -145,10 +149,7 @@ taskList.addEventListener('click', function(e) {
                 
                 
             }
-            
-            
-            
-            
+         
             
         }
         
