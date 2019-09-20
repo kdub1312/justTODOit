@@ -2,11 +2,6 @@
 
 'use strict';
 
-//DING DING DING!!!
-//https://stackoverflow.com/questions/31307514/chrome-extensions-icon-on-click/31308640
-//alert("working!");
-
-
 let addTask = document.getElementById('addTask');
 let taskList = document.getElementById('taskList');
 let taskInput = document.getElementById('taskInput');
@@ -46,7 +41,7 @@ chrome.storage.sync.get(['tasks'], function(data) {
 
 addTask.onclick = function(element) {
     //add item to 'tasks' array then output to list
-    var newTask = taskInput.value;
+    var newTask = taskInput.value;//to save checkbox value consider assigning array to newTask
     taskInput.value = '';
     
     chrome.storage.sync.get('tasks', function(obj) {
@@ -76,8 +71,6 @@ addTask.onclick = function(element) {
         label.appendChild(textWrapper);
         task.appendChild(label);
         textWrapper.textContent = tasks[index];
-        
-        //task.textContent = tasks[index];
         
         var deleteButton = document.createElement("button");
         deleteButton.textContent = 'Delete';

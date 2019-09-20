@@ -24,6 +24,9 @@
             display: grid;
             grid-template-columns: auto auto 30%;
         }
+        input[type=checkbox]:checked + label>span {
+          text-decoration: line-through;
+        }
         .task-text {
             max-width: 175px;
             display: block;
